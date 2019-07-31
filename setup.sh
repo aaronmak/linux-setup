@@ -38,6 +38,7 @@ git clone git://github.com:aaronmak/mac-setup.git ~/code/personal/mac-setup
 cd ~/code/personal/mac-setup || exit
 ./brew.sh
 ./oh-my-zsh.sh
+./nvim.sh
 
 echo "Install google cloud"
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
