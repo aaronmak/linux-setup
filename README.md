@@ -53,6 +53,8 @@ Finally, log out and login with the non root user. `ssh aaron@<IP_ADDRESS>`
 
 ```bash
 sudo apt-get install -y git
+git clone https://github.com/aaronmak/linux-setup.git
+./setup.sh
 ```
 
 
