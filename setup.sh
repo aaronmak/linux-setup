@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Creating repository directories..."
 mkdir -p code/personal
 mkdir -p code/work
