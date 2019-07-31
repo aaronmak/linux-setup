@@ -27,3 +27,24 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/i
 test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+
+echo "git clone dotfiles and setup scripts"
+git clone git://github.com:aaronmak/dotfiles.git ~/code/personal/dotfiles
+cd ~/code/personal/dotfiles || exit
+rake install
+
+# TODO: stop using homebrew
+git clone git://github.com:aaronmak/mac-setup.git ~/code/personal/mac-setup
+cd ~/code/personal/mac-setup || exit
+./brew.sh
+./oh-my-zsh.sh
+
+echo "Install google cloud"
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt-get install apt-transport-https ca-certificates
+echo "deb https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update && sudo apt-get install google-cloud-sdk
+
+
