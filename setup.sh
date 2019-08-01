@@ -12,7 +12,10 @@ sudo apt-get -y upgrade
 echo "Installing packages..."
 
 echo "Installing essentials..."
-sudo apt-get install -y build-essential
+sudo apt-get install -y build-essential python-dev python-setuptools python-pip python-smbus
+sudo apt-get install -y libffi-dev
+sudo apt-get install -y zlib1g-dev libsqlite3-dev tk-dev
+sudo apt-get install -y libssl-dev openssl
 sudo apt-get install -y moreutils
 sudo apt-get install -y findutils
 sudo apt-get install -y curl
