@@ -46,6 +46,7 @@ sudo apt-get install -y tig
 sudo apt-get install -y tldr
 sudo apt-get install -y tree
 sudo apt-get install -y watch
+sudo apt-get install -y xsel
 
 echo "Installing google cloud..."
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
