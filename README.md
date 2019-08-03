@@ -57,4 +57,18 @@ git clone https://github.com/aaronmak/linux-setup.git
 ./setup.sh
 ```
 
+## Create a public ssh key and add it to Github
 
+```bash
+ssh-keygen -t rsa -b 4096 -C "aaronmakks@gmail.com"
+```
+
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+Go to github.com > personal settings > SSH and GPG keys.
+Add the public key to Github.
+
+If that doesn't work, refer to
+[Github Docs](https://help.github.com/en/articles/connecting-to-github-with-ssh).
