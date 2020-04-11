@@ -41,12 +41,13 @@ sudo apt-get install -y git-flow
 sudo apt-get install -y git-lfs
 sudo apt-get install -y imagemagick
 sudo apt-get install -y peco
-sudo apt-get install -y ripgrep
 sudo apt-get install -y tig
 sudo apt-get install -y tldr
 sudo apt-get install -y tree
 sudo apt-get install -y watch
 sudo apt-get install -y xsel
+
+sudo snap install ripgrep --classic
 
 echo "Installing google cloud..."
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
@@ -68,7 +69,7 @@ cd "${DIR}" || exit
 #############
 
 echo "Syncing dotfiles..."
-git clone git://github.com:aaronmak/dotfiles.git ~/code/personal/dotfiles
+git clone https://github.com/aaronmak/dotfiles.git ~/code/personal/dotfiles
 cd ~/code/personal/dotfiles || exit
 rake install
 
