@@ -23,6 +23,7 @@ sudo apt-get install -y libffi-dev
 sudo apt-get install -y zlib1g-dev libsqlite3-dev tk-dev
 sudo apt-get install -y libssl-dev openssl
 sudo apt-get install -y moreutils
+sudo apt-get install -y mosh
 sudo apt-get install -y findutils
 sudo apt-get install -y curl
 sudo apt-get install -y file
