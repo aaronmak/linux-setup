@@ -26,7 +26,7 @@ adduser aaronmak
 Add non root user to sudoers file
 
 ```bash
-vim /etc/sudoers
+sudo vim /etc/sudoers
 ```
 
 `/etc/sudoers` should look something like this.
@@ -47,7 +47,7 @@ Log in using the non root user and disable password
 authentication and root login.
 
 ```bash
-vim /etc/ssh/sshd_config
+sudo vim /etc/ssh/sshd_config
 ```
 
 You should end up with something like
