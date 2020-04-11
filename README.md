@@ -64,7 +64,7 @@ Finally, log out and login with the non root user. `ssh aaronmak@<IP_ADDRESS>`
 ```bash
 sudo apt-get install -y git
 git clone https://github.com/aaronmak/linux-setup.git
-./setup.sh
+./linux-setup/setup.sh
 ```
 
 ## Create a public ssh key and add it to Github
