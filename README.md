@@ -4,8 +4,6 @@ Steps to setup my remote development machine.
 
 ## Setting up a remote instance
 
-Used DigitalOcean's droplet because it's the easiest to setup.
-
 1. Create an Ubuntu instance
 1. Add the necessary public ssh keys during setup and
    allow access only with ssh keys
@@ -19,19 +17,10 @@ SSH into the machine
 ssh root@<IP_ADDRESS>
 ```
 
-Create a non root user, copy ssh keys over
-and give permissions
+Create a non root user
 
 ```bash
 adduser aaronmak
-mkdir /home/aaronmak/.ssh && cat ~/.ssh/authorized_keys >> /home/aaronmak/.ssh/authorized_keys
-chown -R aaronmak:aaronmak /home/aaronmak/.ssh
-```
-
-Check that password authentication is disabled
-
-```bash
-vim /etc/ssh/sshd_config
 ```
 
 Add non root user to sudoers file
@@ -45,6 +34,27 @@ vim /etc/sudoers
 ```
 root   ALL(ALL:ALL) ALL
 aaronmak  ALL(ALL:ALL) ALL
+```
+
+Go back to your local machine and copy the public key over
+
+```bash
+ssh-copy-id aaronmak@<IP_ADDRESS>
+```
+
+
+Log in using the non root user and disable password
+authentication and root login.
+
+```bash
+vim /etc/ssh/sshd_config
+```
+
+You should end up with something like
+
+```
+PermitRootLogin no
+PasswordAuthentication no
 ```
 
 Finally, log out and login with the non root user. `ssh aaronmak@<IP_ADDRESS>`
