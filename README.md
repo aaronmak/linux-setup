@@ -23,9 +23,9 @@ Create a non root user, copy ssh keys over
 and give permissions
 
 ```bash
-adduser aaron
-mkdir /home/aaron/.ssh && cat ~/.ssh/authorized_keys >> /home/aaron/.ssh/authorized_keys
-chown -R aaron:aaron /home/aaron/.ssh
+adduser aaronmak
+mkdir /home/aaronmak/.ssh && cat ~/.ssh/authorized_keys >> /home/aaronmak/.ssh/authorized_keys
+chown -R aaronmak:aaronmak /home/aaronmak/.ssh
 ```
 
 Check that password authentication is disabled
@@ -44,10 +44,10 @@ vim /etc/sudoers
 
 ```
 root   ALL(ALL:ALL) ALL
-aaron  ALL(ALL:ALL) ALL
+aaronmak  ALL(ALL:ALL) ALL
 ```
 
-Finally, log out and login with the non root user. `ssh aaron@<IP_ADDRESS>`
+Finally, log out and login with the non root user. `ssh aaronmak@<IP_ADDRESS>`
 
 ## Install git to pull setup scripts and dotfiles
 
