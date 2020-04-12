@@ -61,6 +61,9 @@ echo "Installing Docker Compose..."
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+echo "Set timezone to Singapore..."
+sudo timedatectl set-timezone Asia/Singapore
+
 echo "Installing google cloud..."
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 sudo apt-get install -y apt-transport-https ca-certificates
