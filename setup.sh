@@ -101,8 +101,12 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 # NEOVIM #
 ##########
 
-echo "Installing neovim..."
+echo "Installing newest version of neovim..."
+sudo add-apt-repository -y ppa:neovim-ppa/unstable
+sudo apt-get update
 sudo apt-get install -y neovim
+sudo apt install python-neovim
+sudo apt install python3-neovim
 
 # Create required required directories and files for neovim configs
 mkdir -p ~/.config/nvim
