@@ -141,3 +141,6 @@ cd ~/.pyenv/version/neovim3/bin
 source activate
 pip install neovim black
 deactivate
+
+# Install updates automatically
+sudo apt install -y unattended-upgrades
