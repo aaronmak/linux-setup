@@ -37,6 +37,7 @@ echo "Installing useful binaries..."
 sudo apt-get install -y ack
 sudo apt-get install -y cmake
 sudo apt-get install -y entr
+sudo apt-get install -y fail2ban
 sudo apt-get install -y fzf
 sudo apt-get install -y git-extras
 sudo apt-get install -y git-flow
