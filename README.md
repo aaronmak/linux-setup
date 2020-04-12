@@ -82,3 +82,62 @@ Add the public key to Github.
 
 If that doesn't work, refer to
 [Github Docs](https://help.github.com/en/articles/connecting-to-github-with-ssh).
+
+
+## Create a gpg subkey from the master key
+
+
+Import the master key from the thumbdrive
+
+```
+gpg --import <MASTER_KEY>
+```
+
+Generate new subkey
+
+```
+gpg --edit-key <MASTER_KEY>
+
+...
+
+gpg> addkey
+
+...
+
+Please select what kind of key you want:
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (5) Elgamal (encrypt only)
+   (6) RSA (encrypt only)
+Your selection? 4
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (2048) 4096
+Requested keysize is 4096 bits
+
+...
+
+gpg> save
+```
+
+Export the subkey
+
+```
+gpg --export-secret-keys --armor <SUBKEY> > <SUBKEY>-private.gpg
+```
+
+Go into the remote machine and import the subkey
+
+```
+ssh aaronmak@<IP_ADDRESS>
+touch <RANDOM_FILENAME>
+vim <RANDOM_FILENAME> # write secret key to file
+gpg --import <RANDOM_FILENAME>
+shred --remove <RANDOM_FILENAME>
+```
+
+Remove generated subkey and masterkey from local computer
+
+```
+gpg --delete-secret-keys <SUBKEY>
+gpg --delete-secret-keys <MASTER_KEY>
+```
