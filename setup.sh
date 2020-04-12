@@ -19,6 +19,7 @@ echo "Installing packages..."
 
 echo "Installing essentials..."
 sudo apt-get install -y build-essential python-dev python-setuptools python-pip python-smbus
+sudo apt-get install -y python3-venv
 sudo apt-get install -y libffi-dev
 sudo apt-get install -y zlib1g-dev libsqlite3-dev tk-dev
 sudo apt-get install -y libssl-dev openssl
@@ -116,3 +117,10 @@ EOT
 # Install vim-plug as plugin manager
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install required python packages
+virtualenv -p /usr/bin/python3 ~/.pyenv/versions/neovim3
+cd ~/.pyenv/version/neovim3/bin
+source activate
+pip install neovim black
+deactivate
