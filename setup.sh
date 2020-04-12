@@ -30,6 +30,7 @@ sudo apt-get install -y curl
 sudo apt-get install -y file
 sudo apt-get install -y git
 sudo apt-get install -y tmux
+sudo apt-get install -y tmuxinator
 sudo apt-get install -y ruby
 sudo apt-get install -y zsh
 
