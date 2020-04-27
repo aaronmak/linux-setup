@@ -24,14 +24,15 @@ sudo apt-get install -y libffi-dev
 sudo apt-get install -y zlib1g-dev libsqlite3-dev tk-dev
 sudo apt-get install -y libssl-dev openssl
 sudo apt-get install -y moreutils
-sudo apt-get install -y mosh
-sudo apt-get install -y findutils
 sudo apt-get install -y curl
 sudo apt-get install -y file
+sudo apt-get install -y findutils
 sudo apt-get install -y git
+sudo apt-get install -y kubectl
+sudo apt-get install -y mosh
+sudo apt-get install -y ruby
 sudo apt-get install -y tmux
 sudo apt-get install -y tmuxinator
-sudo apt-get install -y ruby
 sudo apt-get install -y zsh
 
 echo "Installing useful binaries..."
