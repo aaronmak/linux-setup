@@ -52,6 +52,8 @@ sudo apt-get install -y watch
 sudo apt-get install -y xsel
 
 sudo snap install ripgrep --classic
+sudo snap install kubectl --classic
+sudo snap install gh --edge
 
 echo "Installing Docker..."
 sudo curl -sS https://get.docker.com/ | sh
