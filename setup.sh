@@ -127,5 +127,8 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 # Install required python packages
 mk_neovim_venv
 
+# Install Starship CLI
+curl -fsSL https://starship.rs/install.sh | bash
+
 # Install updates automatically
 sudo apt install -y unattended-upgrades
