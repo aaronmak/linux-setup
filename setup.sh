@@ -96,21 +96,8 @@ git clone https://github.com/aaronmak/dotfiles.git ~/code/personal/dotfiles
 cd ~/code/personal/dotfiles || exit
 rake install
 
-#############
-# oh-my-zsh #
-#############
-
-echo "Installing oh-my-zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 # Custom Plugins
-ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
-
 git clone "https://github.com/zsh-users/zsh-autosuggestions" "${ZSH_CUSTOM}/plugins/zsh-autosuggestions"
-
-# Install spaceship theme
-git clone "https://github.com/denysdovhan/spaceship-prompt.git" "$ZSH_CUSTOM/themes/spaceship-prompt"
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 ##########
 # NEOVIM #
@@ -138,11 +125,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install required python packages
-virtualenv -p /usr/bin/python3 ~/.pyenv/versions/neovim3
-cd ~/.pyenv/version/neovim3/bin
-source activate
-pip install neovim black
-deactivate
+mk_neovim_venv
 
 # Install updates automatically
 sudo apt install -y unattended-upgrades
